@@ -16,7 +16,7 @@
             return factory(jQuery, document, window, navigator);
         });
     } else if (typeof exports === "object") {
-        factory(require("jquery"), document, window, navigator);
+        module.exports = factory(require("jquery"), document, window, navigator);
     } else {
         factory(jQuery, document, window, navigator);
     }
@@ -2447,4 +2447,5 @@
             };
     }());
 
+    return IonRangeSlider;
 }));
