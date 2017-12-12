@@ -152,13 +152,12 @@
      *
      * @param input {Object} link to base input element
      * @param options {Object} slider config
-     * @param plugin_count {Number}
      * @constructor
      */
-    var IonRangeSlider = function (input, options, plugin_count) {
+    var IonRangeSlider = function (input, options) {
         this.VERSION = "2.2.0";
         this.input = input;
-        this.plugin_count = plugin_count;
+        this.plugin_count = plugin_count++;
         this.current_plugin = 0;
         this.calc_count = 0;
         this.update_tm = 0;
@@ -2407,7 +2406,7 @@
     $.fn.ionRangeSlider = function (options) {
         return this.each(function() {
             if (!$.data(this, "ionRangeSlider")) {
-                $.data(this, "ionRangeSlider", new IonRangeSlider(this, options, plugin_count++));
+                $.data(this, "ionRangeSlider", new IonRangeSlider(this, options));
             }
         });
     };
